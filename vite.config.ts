@@ -1,13 +1,12 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite"
 
-
-import { serverConfig, resolveConfig, buildConfig, pluginsConfig, cssConfig } from './config/index'
+import { serverConfig, resolveConfig, buildConfig, pluginsConfig, cssConfig } from "./config/index"
 // https://vitejs.dev/config/
 export default defineConfig({
-  ...serverConfig,
-  ...resolveConfig,
-  ...buildConfig,
+  server:serverConfig,
+  resolve:resolveConfig,
   plugins: pluginsConfig,
-  css: cssConfig
+  css: cssConfig,
+  build: buildConfig,
 
 })
