@@ -1,1 +1,24 @@
-$theme-color: #292d3e;
+:root {
+  --nprogress-color: #1b1e2b;
+  --primary-color: #fff;
+  --text-primary-color: ##292d3e;
+}
+html.dark {
+  --nprogress-color: #9476ff;
+
+  body {
+    --primary-color: #292d3e;
+    --text-primary-color: #ffffff;
+  }
+}
+
+.bg-theme {
+  background-color: var(--primary-color);
+}
+.text-theme {
+  color: var(--text-primary-color);
+}
+
+.h-full {
+  height: 100%;
+}

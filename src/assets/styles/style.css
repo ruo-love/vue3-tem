@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "zrfont";
+  font-weight: 400;
+  src: url("../fonts/TTH77xYYGlun6kUHzpEPD.woff2") format("woff2"),
+    url("../fonts/TTH77xYYGlun6kUHzpEPD.woff") format("woff");
+  font-display: swap;
+}
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: "钉钉进步体 Regular";
+  font-weight: 400;
+  src: url("//at.alicdn.com/wf/webfont/A7wWOFZhjrop/tQJHuJhUS9AxypAb6G0tD.woff2") format("woff2"),
+    url("//at.alicdn.com/wf/webfont/A7wWOFZhjrop/k6gb4xWGiS0bgL5E2utli.woff") format("woff");
+  font-display: swap;
+}
+
+* {
+  font-family: "钉钉进步体 Regular";
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  height: 100% !important;
+}

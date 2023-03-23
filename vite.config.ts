@@ -1,12 +1,13 @@
-import { defineConfig } from "vite"
-
-import { serverConfig, resolveConfig, buildConfig, pluginsConfig, cssConfig } from "./config/index"
+import { ConfigEnv, UserConfigExport, defineConfig } from "vite"
+import vitePlugins from "./config/vitePlugin"
+import { serverConfig, resolveConfig, buildConfig, cssConfig } from "./config/index"
 // https://vitejs.dev/config/
-export default defineConfig({
-  server:serverConfig,
-  resolve:resolveConfig,
-  plugins: pluginsConfig,
-  css: cssConfig,
-  build: buildConfig,
-
-})
+export default (context: ConfigEnv): UserConfigExport => {
+  return {
+    server: serverConfig,
+    resolve: resolveConfig,
+    plugins: vitePlugins(context),
+    css: cssConfig,
+    build: buildConfig
+  }
+}
