@@ -18,7 +18,7 @@ export const routes: RouteRecordRaw[] = [
     component: () => import("@/views/layout/index.vue"),
     redirect: "/home",
     children: [
-      ...routerList,
+      // ...routerList,
       {
         path: "/home",
         name: "首页",
@@ -32,10 +32,7 @@ export const routes: RouteRecordRaw[] = [
       }
     ]
   },
-  {
-    path: "/login",
-    component: () => import("@/views/login/index.vue")
-  },
+
   {
     path: "/:pathMatch(.*)",
     redirect: "/404"

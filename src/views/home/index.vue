@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <h1>home</h1>
+</template>
 
 <script setup></script>
 <style lang="scss" scoped></style>
