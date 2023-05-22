@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
 import NProgress from "nprogress"
-import { useAuthStore } from "@/store"
+// import { useAuthStore } from "@/store"
 import routerList from "./mergeRouter"
-import { useNavStore } from "@/store/modules/app"
+// import { useNavStore } from "@/store/modules/app"
 
 NProgress.configure({
   easing: "ease", // 动画方式
@@ -49,26 +49,28 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const navStore = useNavStore()
-  const auth = useAuthStore()
-  if (!NProgress.isStarted()) {
-    NProgress.start()
-  }
-  if (auth.token) {
-    if (to.path == "/login") {
-      next({ path: "/home" })
-    } else {
-      next()
-    }
-    navStore.routerChange(to)
-    // routerChange
-  } else {
-    if (to.path == "/login") {
-      next()
-    } else {
-      next({ path: "/login" })
-    }
-  }
+  NProgress.start()
+  next()
+  // const navStore = useNavStore()
+  // const auth = useAuthStore()
+  // if (!NProgress.isStarted()) {
+  //   NProgress.start()
+  // }
+  // if (auth.token) {
+  //   if (to.path == "/login") {
+  //     next({ path: "/home" })
+  //   } else {
+  //     next()
+  //   }
+  //   navStore.routerChange(to)
+  //   // routerChange
+  // } else {
+  //   if (to.path == "/login") {
+  //     next()
+  //   } else {
+  //     next({ path: "/login" })
+  //   }
+  // }
 })
 router.afterEach((to, from) => {
   NProgress.done()

@@ -1,6 +1,6 @@
 // src/api/http.ts
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from "axios"
-import { ElMessage } from "element-plus"
+// import { ElMessage } from "element-plus"
 import showCodeMessage from "@/api/code"
 
 const BASE_PREFIX = "/api"
@@ -36,16 +36,17 @@ service.interceptors.response.use(
     if (response.status === 200) {
       return response.data
     }
-    ElMessage.info(JSON.stringify(response.status))
+    // ElMessage.info(JSON.stringify(response.status))
+
     return response.data
   },
   (error: AxiosError) => {
     const { response } = error
     if (response) {
-      ElMessage.error(showCodeMessage(response.status))
+      // ElMessage.error(showCodeMessage(response.status))
       return Promise.reject(response.data)
     }
-    ElMessage.warning("网络连接异常,请稍后再试!")
+    // ElMessage.warning("网络连接异常,请稍后再试!")
     return Promise.reject(error)
   }
 )

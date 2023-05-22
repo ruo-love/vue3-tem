@@ -2,7 +2,7 @@ import vue from "@vitejs/plugin-vue"
 import AutoImport from "unplugin-auto-import/vite" //自动引入api
 import Components from "unplugin-vue-components/vite" //自动引入第三方组件
 import Markdown from "vite-plugin-md" //MD
-import { ElementPlusResolver, AntDesignVueResolver, NaiveUiResolver } from "unplugin-vue-components/resolvers" //组件库解析器
+import { AntDesignVueResolver } from "unplugin-vue-components/resolvers" //组件库解析器
 import Icons from "unplugin-icons/vite" //图表库icones.netlify.app/
 import IconsResolver from "unplugin-icons/resolver"
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons" ///svg
@@ -46,7 +46,7 @@ export default function vitePlugins(context: ConfigEnv) {
         filepath: "./.eslintrc-auto-import.json", // Default `./.eslintrc-auto-import.json`
         globalsPropValue: true // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
-      resolvers: [ElementPlusResolver(), AntDesignVueResolver(), NaiveUiResolver()]
+      resolvers: [AntDesignVueResolver()]
     }),
     Components({
       dts: "./src/components.d.ts",
@@ -57,9 +57,7 @@ export default function vitePlugins(context: ConfigEnv) {
       extensions: ["vue", "md"],
       // 解析的 UI 组件库，这里以 Element Plus 和 Ant Design Vue 为例
       resolvers: [
-        ElementPlusResolver(),
         AntDesignVueResolver({ importStyle: false, resolveIcons: true }),
-        NaiveUiResolver(),
         IconsResolver(),
         VueUseComponentsResolver()
       ]
@@ -83,7 +81,7 @@ export default function vitePlugins(context: ConfigEnv) {
       prodEnabled: true, //设置打包是否启用 mock 功能
       watchFiles: true, //设置是否监视mockPath对应的文件夹内文件中的更改
       injectCode: `
-        import { setupProdMockServer } from './mockProdServer';
+        import { setupProdMockServer } from '../config/mockProdServer';
         setupProdMockServer();
       `, //如果生产环境开启了 mock 功能,即prodEnabled=true.则该代码会被注入到injectFile对应的文件的底部。默认为main.{ts,js}
       logger: true //是否在控制台显示请求日志

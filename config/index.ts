@@ -45,12 +45,12 @@ export const buildConfig = {
       entryFileNames: "entry/[name]-[hash].js",
       assetFileNames: "[ext]/[name]-[hash].[ext]",
       manualChunks(id) {
-        // if (id.includes("home/")) {
-        //   return "home"
-        // }
-        // if (id.includes("about/")) {
-        //   return "about"
-        // }
+        if (id.includes("home/")) {
+          return "home"
+        }
+        if (id.includes("about/")) {
+          return "about"
+        }
       }
     }
   }
