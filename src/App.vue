@@ -1,5 +1,5 @@
 <template>
-  <div class="zr-blog bg-shallow_bgc mx-32">
+  <div class="zr-blog bg-shallow_bgc mx-32 lg_pc:mx-60">
     <router-view />
   </div>
 </template>

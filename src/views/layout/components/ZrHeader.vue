@@ -1,13 +1,13 @@
 <template>
-  <div class="relative h-12">
-    <header class="fixed w-full flex items-center h-12 l dark:bg-dark_bgc bg-light_bgc left-0 top-0 px-16">
+  <div class="relative h-16">
+    <header class="fixed w-full flex items-center h-16 l dark:bg-dark_bgc bg-light_bgc left-0 top-0 px-16 lg_pc:px-44">
       <Logo />
-      <ul class="flex-1 flex items-center pl-8 font-light text-xs my-0">
-        <li class="flex flex-1 justify-between mr-8">
-          <a v-for="nav in 7" :key="nav">首页{{ nav }}</a>
+      <ul class="flex-1 flex h-full items-center pl-8 font-light text-sm my-0 text-light_text">
+        <li class="flex flex-1 items-center h-full mr-8">
+          <span v-for="nav in 7" :key="nav" class="w-14 h-full flex justify-center items-center">首页{{ nav }}</span>
         </li>
-        <ul class="flex flex-1 items-center justify-between ml-8">
-          <li>
+        <ul class="flex flex-1 items-center justify-end ml-8">
+          <li class="ml-4">
             <a-input-search
               v-model:value="searchValue"
               placeholder="input search loading with enterButton"
@@ -15,20 +15,20 @@
               enter-button
             />
           </li>
-          <li>
-             <!-- <a-switch>
-      <template #checkedChildren><check-outlined /></template>
-      <template #unCheckedChildren><close-outlined /></template>
-    </a-switch> -->
+          <li class="ml-4">
+            <a-switch>
+              <template #checkedChildren>x</template>
+              <template #unCheckedChildren>2</template>
+            </a-switch>
           </li>
-          <li>
-            <FullscreenExitOutlined class="text-2xl"/>
+          <li class="ml-4">
+            <FullscreenExitOutlined class="text-2xl" />
           </li>
-          <li>
-            <GithubOutlined class="text-2xl"/>
+          <li class="ml-4">
+            <GithubOutlined class="text-2xl" />
           </li>
-          <li>
-             <a-avatar>USER</a-avatar>
+          <li class="ml-4">
+            <a-avatar>USER</a-avatar>
           </li>
         </ul>
       </ul>
@@ -36,7 +36,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import {FullscreenExitOutlined,GithubOutlined} from '@ant-design/icons-vue'
-const searchValue = ref<string>('')
+import { FullscreenExitOutlined, GithubOutlined } from "@ant-design/icons-vue"
+const searchValue = ref<string>("")
 </script>
 <style lang="scss" scoped></style>
