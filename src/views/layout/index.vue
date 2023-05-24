@@ -1,5 +1,5 @@
 <template>
-  <h1>layout</h1>
+  <ZrHeader />
   <router-view></router-view>
 </template>
 

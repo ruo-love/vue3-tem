@@ -22,7 +22,16 @@
       "@svg/*": ["src/assets/svg/*"]
     }
   },
-  "include": ["src/*.ts", "src/**/*.ts", "src/**/*.vue", "src/*.vue", "src/*.d.ts", "src/**/*.d.ts", "config/*.ts"],
+  "include": [
+    "src/*.ts",
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "src/*.vue",
+    "src/*.d.ts",
+    "src/**/*.d.ts",
+    "config/*.ts",
+    "./components.d.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules"]
 }
