@@ -22,8 +22,9 @@ export default {
       // => @media (min-width: 1536px) { ... }
     },
     colors: {
-      light_bgc: '#F5F5F5',
-      dark_bgc: '#1F1F1F',
+      light_bgc: '#FFFFFF',
+      shallow_bgc: '#f2f3f5',
+      dark_bgc: '#292d3e',
       light_text: '#FFFFFF',
       dark_text: '#000000',
     },

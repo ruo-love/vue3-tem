@@ -1,6 +1,6 @@
 <template>
   <ZrHeader />
-  <router-view></router-view>
+  <ZrMain />
 </template>
 
 <script setup></script>
