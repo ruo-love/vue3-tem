@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-16">
+  <div class="relative h-16 z-10">
     <header class="fixed w-full flex items-center h-16 l dark:bg-dark_bgc bg-light_bgc left-0 top-0 px-16 lg_pc:px-44">
       <Logo />
       <ul class="flex-1 flex h-full items-center pl-8 font-light text-sm my-0 text-light_text">
