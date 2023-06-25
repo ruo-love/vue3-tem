@@ -21,13 +21,19 @@ export default {
       'lg_pc': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
-    colors: {
-      light_bgc: '#FFFFFF',
-      shallow_bgc: '#f2f3f5',
-      dark_bgc: '#292d3e',
-      light_text: '#FFFFFF',
-      dark_text: '#000000',
-    },
+    extend: {
+      colors: {
+        light_bgc: '#FFFFFF',
+        shallow_bgc: '#f2f3f5',
+        dark_bgc: '#292d3e',
+        light_text: '#292d3e',
+        dark_text: '#FFFFFF',
+        text_active: '#1e80ff',
+        text_gray: '#515767',
+        bgc_shallow_active: '#eaf2ff',
+      },
+    }
+
   },
   plugins: [],
 }
