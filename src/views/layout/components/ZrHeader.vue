@@ -4,7 +4,7 @@
       <Logo />
       <ul class="flex-1 flex items-center pl-8 font-light text-xs my-0">
         <li class="flex flex-1 justify-between mr-8">
-          <a v-for="nav in 7" :key="nav">首页{{ nav }}</a>
+          <a v-for="nav in 7" :key="nav">1首页{{ nav }}</a>
         </li>
         <ul class="flex flex-1 items-center justify-between ml-8">
           <li>
