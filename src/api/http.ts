@@ -25,6 +25,7 @@ service.interceptors.request.use(
     return config
   },
   (error: AxiosError) => {
+    const { response } = error
     showCodeMessage(response.status)
     return Promise.reject(error)
   }
@@ -40,7 +41,6 @@ service.interceptors.response.use(
   },
   (error: AxiosError) => {
     const { response } = error
-
     console.log(showCodeMessage(response.status))
     return Promise.reject(error)
   }

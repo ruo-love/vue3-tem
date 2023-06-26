@@ -11,5 +11,5 @@
       "@svg/*": ["src/assets/svg/*"]
     }
   },
-  "include": ["vite.config.ts", "config/*.ts","**/*.ts", "**/*.tsx", "src/**/*.ts", "src/**/*.tsx"],
+  "include": ["vite.config.ts", "src/**/*.ts", "config/*.ts", "**/*.ts", "**/*.tsx", "src/**/*.ts", "src/**/*.tsx"]
 }

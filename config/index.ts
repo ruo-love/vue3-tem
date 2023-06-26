@@ -27,9 +27,7 @@ export const resolveConfig = {
 
 export const buildConfig = {
   brotliSize: false,
-  // 消除打包大小超过500kb警告
   chunkSizeWarningLimit: 2000,
-  // 在生产环境移除console.log
   terserOptions: {
     compress: {
       drop_console: false,
@@ -42,14 +40,11 @@ export const buildConfig = {
   rollupOptions: {
     output: {
       chunkFileNames: "js/[name]-[hash].js",
-      entryFileNames: "entry/[name]-[hash].js",
+      entryFileNames: "entry/entry-[name]-[hash].js",
       assetFileNames: "[ext]/[name]-[hash].[ext]",
       manualChunks(id) {
-        if (id.includes("home/")) {
-          return "home"
-        }
-        if (id.includes("about/")) {
-          return "about"
+        if (id.includes("node_modules")) {
+          return "node_modules_packages"
         }
       }
     }

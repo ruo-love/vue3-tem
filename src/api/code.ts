@@ -6,16 +6,22 @@ declare interface codeMessageMapTypes {
   404: string
   405: string
   500: string
-  [key: string]: string
+  [key: string|number]: string
 }
 
 const codeMessageMap: codeMessageMapTypes = {
-  400: "[400]:请求参数错误",
-  401: "[401]:账户未登录",
-  403: "[403]:拒绝访问",
-  404: "[404]:请求路径错误",
-  405: "[405]:请求方法错误",
-  500: "[500]:服务器错误"
+  400: "400: 请求出现语法错误~",
+  401: "401: 用户未授权~",
+  403: "403: 服务器拒绝访问~",
+  404: "404: 请求的资源不存在~",
+  405: "405: 请求方法未允许~",
+  408: "408: 网络请求超时~",
+  500: "500: 服务器内部错误~",
+  501: "501: 服务器未实现请求功能~",
+  502: "502: 错误网关~",
+  503: "503: 服务不可用~",
+  504: "504: 网关超时~",
+  505: "505: http版本不支持该请求~"
 }
 
 export const showCodeMessage = (code: number | string): string => {
