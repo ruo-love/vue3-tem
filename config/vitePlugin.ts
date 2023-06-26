@@ -71,13 +71,13 @@ export default function vitePlugins(context: ConfigEnv) {
     //   // 指定symbolId格式
     //   symbolId: "[name]"
     // }),
-    viteMockServe({
-      mockPath: "src/mock", //设置mock文件存储目录
-      localEnabled: true, //设置是否启用本地mock文件
-      prodEnabled: true, //设置打包是否启用 mock 功能
-      watchFiles: true, //设置是否监视mockPath对应的文件夹内文件中的更改
-      logger: true //是否在控制台显示请求日志
-    })
-
+    getViteEnv(context.mode, "VITE_API_Mock") &&
+      viteMockServe({
+        mockPath: "src/mock/", //设置mock文件存储目录
+        localEnabled: true, //设置是否启用本地mock文件
+        prodEnabled: true, //设置打包是否启用 mock 功能
+        watchFiles: true, //设置是否监视mockPath对应的文件夹内文件中的更改
+        logger: true //是否在控制台显示请求日志
+      })
   ]
 }

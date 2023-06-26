@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } f
 
 import { showCodeMessage } from "@/api/code"
 
-const BASE_PREFIX = "/api"
+const BASE_PREFIX = import.meta.env.VITE_API_BASEURL as string
 
 // 创建实例
 const service: AxiosInstance = axios.create({
@@ -19,6 +19,9 @@ const service: AxiosInstance = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   (config: any) => {
+    if (config.mock) {
+      config.baseURL = "/mock"
+    }
     return config
   },
   (error: AxiosError) => {
@@ -30,15 +33,15 @@ service.interceptors.request.use(
 // 响应拦截器
 service.interceptors.response.use(
   (response: AxiosResponse) => {
-    if (response.status === 200) {
-      return response.data
+    if (response.data.mock) {
+      console.log(`MOCK_URL: ${response.config.url}"\nMOCK_DATA:"`, response.data)
     }
-
     return response.data
   },
   (error: AxiosError) => {
     const { response } = error
-    showCodeMessage(response.status)
+
+    console.log(showCodeMessage(response.status))
     return Promise.reject(error)
   }
 )

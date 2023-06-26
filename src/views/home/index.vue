@@ -1,6 +1,12 @@
 <template>
-  <h1>home</h1>
+  <h1 @click="login">home</h1>
 </template>
 
-<script setup></script>
+<script setup>
+import { getList } from "@/servers/getList"
+
+const login = async () => {
+  getList()
+}
+</script>
 <style lang="scss" scoped></style>

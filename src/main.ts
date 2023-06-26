@@ -5,10 +5,6 @@ import "./assets/styles/nprogress.scss"
 import "@/assets/styles/style.css"
 import { setupStore } from "./store"
 import directive from "./directive"
-import { setupProdMockServer } from "@config/mockProdServer"
-if (process.env.NODE_ENV === "development") {
-  setupProdMockServer()
-}
 
 const app = createApp(App)
 setupStore(app)
