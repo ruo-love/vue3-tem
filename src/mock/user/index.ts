@@ -1,1 +1,1 @@
-export * as userLoginMockModel  from "./login"
+export * from "./login"

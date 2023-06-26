@@ -18,8 +18,6 @@ const codeMessageMap: codeMessageMapTypes = {
     500: '[500]:服务器错误',
 };
 
-const showCodeMessage = (code: number | string): string => {
+export const showCodeMessage = (code: number | string): string => {
     return codeMessageMap[JSON.stringify(code)] || '网络连接异常,请稍后再试!';
 };
-
-export default showCodeMessage;

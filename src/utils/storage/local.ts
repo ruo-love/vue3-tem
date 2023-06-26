@@ -1,13 +1,13 @@
-
 import { decrypto, encrypto } from "../crypto"
 
-//入参本地存储类型
+interface StorageInterface {}
+
 interface StorageData<T> {
   value: T
   expire: number | null
 }
 
-function createLocalStorage<T extends StorageInterface.Local>() {
+function createLocalStorage<T extends StorageInterface>() {
   /** 默认缓存期限为7天 */
   const DEFAULT_CACHE_TIME = 60 * 60 * 24 * 7
 
